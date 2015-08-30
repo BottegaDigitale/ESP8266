@@ -41,6 +41,8 @@ boolean stringComplete = false;  // whether the string is complete
 boolean sflag = false;           //whether the get request succeded
 boolean BADsent = false;        //whether wifi disconnected message has been sent
 
+String htmlResponse;          //received response to request
+
 // Create an instance of the server
 // specify the port to listen on as an argument
 WiFiServer server(80);
@@ -131,7 +133,7 @@ void WifiListen() {
   String line;
   while (client.available()) {
     line = client.readStringUntil('\r');
-    String htmlResponse = "HTTP/1.1 400 BAD\r\n";
+    htmlResponse = "HTTP/1.1 400 BAD\r\n";
 
     if (line.indexOf("GET") != -1 && line.indexOf("favicon") == -1) {
       sendGot(line.substring(5));
