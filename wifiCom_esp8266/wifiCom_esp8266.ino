@@ -6,6 +6,7 @@
             -set new ssid and password settings
             -set new host and url settings
             -send get request (with "GET:myrequest\n") which will be formatted with host and url
+            -receive requests and pass data to arduino
   Informs connected arduino of:
             -status of wifi connection ("WIFI:OK\n" periodically when connected, "WIFI:BAD\n" once if not connected)
             -success of get request ("GET:OK\n" if success, "GET:BAD\n" if bad request, "GET:FAIL\n" if fails)
